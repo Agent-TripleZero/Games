@@ -1,0 +1,110 @@
+:root {
+  color-scheme: dark;
+  --bg: #07110a;
+  --panel: rgba(10, 32, 21, 0.9);
+  --text: #e9f7ea;
+  --muted: #8db08f;
+  --accent: #7fdc7f;
+  --accent-strong: #2f9f4a;
+  --border: rgba(127, 220, 127, 0.3);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: radial-gradient(circle at top, #15361e 0%, var(--bg) 65%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.scene {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
+  margin: 0 0 10px;
+  color: #caffca;
+}
+.subtitle {
+  color: var(--muted);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.story-panel {
+  display: grid;
+  gap: 16px;
+}
+.story-copy h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+.story-copy p {
+  line-height: 1.7;
+  color: #e8f8e5;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+button {
+  border: 1px solid var(--accent);
+  background: linear-gradient(135deg, rgba(127,220,127,0.18), rgba(47,159,74,0.22));
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease;
+}
+button:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, rgba(127,220,127,0.3), rgba(47,159,74,0.32));
+}
+
+.stats-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.stats-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.stats-panel li {
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .scene { padding: 20px 14px 36px; }
+  .panel { padding: 16px; }
+}
